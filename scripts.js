@@ -65,7 +65,7 @@ document.getElementById('libchat_code').onpaste = function() {
 
 		// Generate the JavaScript needed and populate the textarea once step 1 is complete
 
-		scriptCode = "chatStyles=document.createElement('link');chatStyles.rel='stylesheet',chatStyles.type='text/css',chatStyles.href='//gvsuliblabs.com/labs/summon2.0/summon2.css',document.getElementsByTagName('head')[0].appendChild(chatStyles)&&console.log('Adding the custom chat styles...'),setTimeout(function(){console.log('About to add the chat button...');var e=document.body.querySelector('.savedItemsFolderContainer'),t=document.createElement('div');t.id='libchat_"+libchatHash+"',e.appendChild(t)&&console.log('Added the chat container...');var a=document.createElement('script');a.type='text/javascript',a.src='//v2.libanswers.com/load_chat.php?hash="+libchatHash+"',document.body.appendChild(a)&&console.log('Successfully added the Springshare chat script!')},1500);";
+		scriptCode = "setTimeout(function(){console.log('About to add the chat button...');var e=document.body.querySelector('.savedItemsFolderContainer'),t=document.createElement('div');t.id='libchat_"+libchatHash+"',e.appendChild(t)&&console.log('Added the chat container...');var a=document.createElement('script');a.type='text/javascript',a.src='//v2.libanswers.com/load_chat.php?hash="+libchatHash+"',document.body.appendChild(a)&&console.log('Successfully added the Springshare chat script!')},1500);";
 		document.getElementById('libchat_code_text').value = scriptCode;
 	}, 100);
 
@@ -88,6 +88,10 @@ $('.download').find('a').click(function(e) {
 // Add custom styles to page
 
 var chatStyles = '#libchat_' + libchatHash + ' button {font-weight: bold; border: 1px solid #333 !important; font-size: 1em; padding: .5em 1em .5em 3em !important; position: relative; right: -4em; } #libchat_' + libchatHash + ' button.libchat_online[style] {background-image: url(//mreidsma.github.io/libchat2summon/img/chat-online.png) !important; background-repeat: no-repeat; background-position: 15% 50%; } #libchat_' + libchatHash + ' button.libchat_offline[style] {background-image: url(//mreidsma.github.io/libchat2summon/img/chat-offline.png) !important; background-repeat: no-repeat; background-position: 15% 50%; } @media screen and (min-width:1025px) {#libchat_' + libchatHash + ' button {top: -2.7em; float: right; margin-right: 2%; right: 0; } } ';
+if($('head').append('<style>' + chatStyles + '</style>')) {
+	console.log('Adding the chat styles!');
+}
+
 function download(filename, text) {
   var pom = document.createElement('a');
   pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
