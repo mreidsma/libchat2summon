@@ -7,7 +7,7 @@ var chatStyles = document.createElement('link');
 chatStyles.rel = 'stylesheet';
 chatStyles.type = 'text/css';
 chatStyles.href = '//gvsuliblabs.com/labs/summon2.0/summon2.css';
-if(document.head.appendChild(chatStyles)) {
+if(document.getElementsByTagName('head')[0].appendChild(chatStyles)) {
     console.log('Adding the custom chat styles...');
 }
 
@@ -20,7 +20,7 @@ setTimeout(function() {
   
     var chatContainer = document.body.querySelector(".savedItemsFolderContainer");
     var chatDiv = document.createElement('div');
-    chatDiv.id = chatHash;
+    chatDiv.id = 'libchat_' + chatHash;
     if(chatContainer.appendChild(chatDiv)) {
       console.log('Added the chat container...');
     }

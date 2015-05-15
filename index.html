@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>LibChat to Summon Tool</title>
+
+</head>
+
+<body>
+
+<header role="banner">
+
+	<h1>LibChat to Summon</h1>
+
+	<p class="subtitle">Easily get your LibChat into Summon 2.0</p>
+
+</header>
+
+<section id="onboard">
+
+	<h2>Why is it so hard?</h2>
+
+	<p>ProQuest's Summon 2.0 has a spot for LibChat settings in its Administration Screen, but it doesn't work. If you want to get your LibChat into Summon 2.0, you'll have to do it through Summon's custom JavaScript feature.</p>
+
+	<p>That's fine if you're a developer, or have experience with JavaScript? But what about the rest of the libraries? That's why I created this tool. In just a few steps, I'll help you get LibChat working in your Summon instance in 5 easy steps.</p>
+
+	<p>What you'll need:<br />
+	<ol>
+		<li>A LibAnswers/LibChat account for your library</li>
+		<li>A login for your library's Serials Solutions Client Center, with Summon admin permissions</li>
+		<li>A web host where you can save a JavaScript file. Your library's CMS will probably work.</li>
+		<li>10 minutes.</li>
+	</ol>
+
+	<p class="next">Ready? <a href="#">Let's Get Started.</a></p>
+
+</section>
+
+<section id="step1">
+
+	<h2>Step 1: Get your LibChat "Hash"</h2>
+
+	<p>LibChat works by dynamically loading a chat "widget" from the Springshare servers into Summon. It knows which widget to load by giving each widget it's own "hash," which is a long string of random-looking characters. We'll need the hash for your widget so that we can load it in Summon.</p>
+
+	<ol id="step1_list">
+		<li>Log in to LibAnswers</li>
+		<li>Click on 'LibChat' in the Orange header, then select 'Chat Widgets'<br />
+			<img src="img/libchat1.png" alt="Navigate to LibChat > Chat Widgets" />
+		</li>
+		<li>Find the chat widget you want to use in the list, then click the "View Code" icon on the right.<br />
+			<img src="img/libchat2.png" alt="View the Widget Code" />
+		</li>
+		<li>Select the code from this box by clicking on the text and pressing Ctrl-C<br />
+			<img src="img/libchat3.gif" alt="Copy the widget code" />
+		</li>
+		<li>Now paste the code into the box below.<br />
+		<form id="libchat_magic">
+			<label for="libchat_code">Paste LibChat Code Here:</label><br />
+			<textarea name="libchat_code" id="libchat_code"></textarea>
+		</form>
+		</li>
+	</ol>
+
+	<p class="next">Nice work! <a href="#">On to the next step.</a></p>
+		
+</section>
+
+<section id="step2">
+
+	<h2>Step 2: Test and save your new JavaScript file</h2>
+
+	<p>I've generated the JavaScript file you need to load into Summon, but first, I'd like you to test it.</p>
+
+	<ol>
+		<li>First, click in the box below and copy all the code by pressing Ctrl-C.<br />
+			<textarea id="libchat_code_text"></textarea>
+		</li>
+		<li>Now open up a new window or tab in your browser and go to your library's Summon site. Do a search so that you have a sceen with some results, like this:<br />
+			<img src="img/summonresults.png" alt="Summon results screen" /></li>
+		<li>I want you to open up your browser's "Developer Tools Console." In most browsers, you can right-click on the web page and click "Inspect Element," and then click the "Console" link. If you need help finding it, select your browser below and I'll show you where to find it:
+			<ul class="browsers">
+				<li id="chrome">Chrome</li>
+				<li id="firefox">Firefox</li>
+				<li id="safari">Safari</li>
+				<li id="Ie">Internet Explorer</li>
+			</ul>
+		</li>
+		<li>You should see a chevron in the console with a cursor next to it. I want you to click next to that chevron and then paste the code you copied earlier. You can press Ctrl-V for that. Once you've pasted the code, hit enter.</li>
+		<li>Now move the Developer Tools window so you can see your Summon site. Do you have a chat button in the upper right hand corner, like this:<br />
+			<img src="img/summonchat.ong" alt="You should have a chat button here" /><br />
+			<ul class="yesno">
+				<li><a href="#" class="yes">Yes, I have a chat button!</a></li>
+				<li><a href="#" class="no">Nope. It didn't work!</a></li>
+			</ul>
+		</li>
+
+</section>
+
+<section id="step3">
+
+	<h2>Step 3: Upload your file to a server</h2>
+
+	<p>Summon needs to be able to load the JavaScript file we just created, so we need to get it somewhere on the internet. You can probably use your library's Content Management System (like Wordpress or Drupal) to host that. If you don't have access to that, then you can use Dropbox to host your script.</p>
+
+	<p>If you need more help, click on the system name below to learn how to upload your script.</p>
+
+	<ul class="cms">
+		<li class="wordpress">Wordpress</li>
+		<li class="drupal">Drupal</li>
+		<li class="dropbox">Dropbox</li>
+	</ul>
+
+	<form>
+	<label for="scripturl">Paste the URL (Ctrl-V) for your script in the box below:</label>
+	<textarea name="scripturl" id="scripturl"></textarea>
+	</form>
+
+	<p class="next">Okay! I've uploaded my script! <a href="#">Show me the next step</a>.</p>
+	
+
+</section>
+
+<section id="step4">
+
+	<h2>Step 4: Customize Summon 2.0 to load your new JavaScript file</h2>
+
+	<p>Now we're going to tell Summon where to find your script.</p>
+
+	<ol>
+		<li>Log in to the <a href="https://clientcenter.serialssolutions.com" target="_blank">Serials Solutions Client Center</a>.</li>
+		<li>Click on the Summon Administration Console.</li>
+		<li>Scroll <i>all the way to the bottom</i> of the Adminstration Console. The second-to-last box is called "<b>Summon 2.0 External Script</b>".<br />
+		<img src="img/summonsettings.png" alt="The second-to-last setting is for the script" />
+		</li>
+		<li>Click in the box below and copy the URL (Ctrl-C):<br />
+		<textarea name="summonurl" id="summonurl" class="copybox"></textarea>
+		</li>
+		<li>Paste (Ctrl-V) that URL into the field for the "Custom Script URL".</li>
+		<li>Click "Save Settings" at the bottom of the form.</li>
+	
+	<p class="next">Almost done! <a href="#">Let's go to the last step!</a></p>
+
+</section>
+
+<section id="step5">
+
+	<h2>Step 5: Test and Celebrate!</h2>
+
+		<p>Now let's go back to your library's Summon site and do a new search. You should see your new chat box in the upper right hand corner!</p>
+		<p>Did it work?</p>
+		<ul class="yesno">
+				<li><a href="#" class="yes">Yes, It works!/a></li>
+				<li><a href="#" class="no">Nope. It didn't work!</a></li>
+			</ul>
+
+</section>
+
+
+
+<footer role="complimentary">
+
+	<p>Created by <a href="http://matthewreidsma.com">Matthew Reidsma</a> of <a href="http://gvsu.edu/library">GVSU Libraries</a>. Licensed under the <a href="http://www.gnu.org/copyleft/gpl.html">GPL</a>. Source available on Github.</p>
+
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
