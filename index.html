@@ -22,7 +22,7 @@
 
 <section id="onboard" data-number="1">
 
-	<p>ProQuest's Summon 2.0 has a spot for LibChat settings in its Administration Screen, but it doesn't work. If you want to get your LibChat into Summon 2.0, you'll have to do it through Summon's custom JavaScript feature.</p>
+	<p>ProQuest's Summon 2.0 has a spot for LibChat settings in its Administration Console, but it doesn't work. If you want to get your LibChat into Summon 2.0, you'll have to do it through Summon's custom JavaScript feature.</p>
 
 	<p>That's fine if you're a developer, or have experience with JavaScript? But what about the rest of the libraries? That's why I created this tool. In just a few steps, I'll help you get LibChat working in your Summon instance in 5 easy steps.</p>
 
@@ -30,7 +30,7 @@
 	<ol>
 		<li>A LibAnswers/LibChat account for your library</li>
 		<li>A login for your library's Serials Solutions Client Center, with Summon admin permissions</li>
-		<li>A web host where you can save a JavaScript file. Your library's CMS will probably work.</li>
+		<li>A web host where you can save a JavaScript file, or a Dropbox account. Your library's CMS will probably work.</li>
 		<li>10 minutes.</li>
 	</ol>
 
@@ -54,7 +54,7 @@
 		<li>Find the chat widget you want to use in the list, then click the "View Code" icon on the right.<br />
 			<img src="img/libchat2.png" alt="View the Widget Code" />
 		</li>
-		<li>Select the code from this box by clicking on the text and pressing Ctrl-C<br />
+		<li>Select the code from the box that popped up by clicking on the text and pressing Ctrl-C<br />
 			<img src="img/libchat3.png" alt="Copy the widget code" />
 		</li>
 		<li>Now paste the code into the box below.<br />
@@ -83,10 +83,12 @@
 		</li>
 		<li>Now open up a new window or tab in your browser and go to your library's Summon site. Do a search so that you have a sceen with some results, like this:<br />
 			<img src="img/summonresults.png" alt="Summon results screen" /></li>
-		<li>I want you to open up your browser's "Developer Tools Console." In most browsers, you can right-click on the web page and click "Inspect Element," and then click the "Console" link. If you need help finding it, head over to <a href="https://thatandromeda.github.io/courseware/Intro-via-jQuery/intro.html">Andromeda Yelton's Excellent Intro to Programming</a> page and look over her tips for finding yoru Developer Tools Console. I'll wait!
+		<li>I want you to open up your browser's "Developer Tools Console." In most browsers, you can right-click on the web page and click "Inspect Element," and then click the "Console" link. If you need help finding it, head over to <a href="https://thatandromeda.github.io/courseware/Intro-via-jQuery/intro.html">Andromeda Yelton's Excellent Intro to Programming</a> page and look over her tips for finding your browser's Developer Tools Console. I'll wait!
 		</li>
-		<li>You should see a chevron in the console with a cursor next to it. I want you to click next to that chevron and then paste the code you copied earlier. You can press Ctrl-V for that. Once you've pasted the code, hit enter.</li>
-		<li>Now move the Developer Tools window so you can see your Summon site. Do you have a chat button in the upper right hand corner, like this:<br />
+		<li>You should see a chevron in the console with a cursor next to it.<br />
+		<img src="img/chromeconsole.png" alt="Chrome's Developer Console" /><br />
+		I want you to click next to that chevron and then paste the code you copied earlier. You can press Ctrl-V for that. Once you've pasted the code, hit enter.</li>
+		<li>Now move the Developer Tools window so you can see your Summon site. Do you have a chat button in the upper right hand corner, like this?<br />
 			<img src="img/summonchat.png" alt="You should have a chat button here" /><br />
 			<ul class="yesno" id="testcheck">
 				<li><a href="#testworked" class="yes">Yes, I have a chat button!</a></li>
