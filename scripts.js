@@ -85,6 +85,9 @@ $('.download').find('a').click(function(e) {
 	download('libchat2summon.js', scriptCode);
 });
 
+// Add custom styles to page
+
+var chatStyles = '#libchat_' + libchatHash + ' button {font-weight: bold; border: 1px solid #333 !important; font-size: 1em; padding: .5em 1em .5em 3em !important; position: relative; right: -4em; } #libchat_' + libchatHash + ' button.libchat_online[style] {background-image: url(//gvsu.edu/cms3/assets/741ECAAE-BD54-A816-71DAF591D1D7955C/chat-online.png) !important; background-repeat: no-repeat; background-position: 15% 50%; } #libchat_' + libchatHash + ' button.libchat_offline[style] {background-image: url(//gvsu.edu/cms3/assets/741ECAAE-BD54-A816-71DAF591D1D7955C/chat-offline.png) !important; background-repeat: no-repeat; background-position: 15% 50%; } @media screen and (min-width:1025px) {#libchat_' + libchatHash + ' button {top: -2.7em; float: right; margin-right: 2%; right: 0; } } ';
 function download(filename, text) {
   var pom = document.createElement('a');
   pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
