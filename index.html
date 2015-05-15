@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>LibChat to Summon Tool</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css" />
 
 </head>
 
@@ -16,9 +20,7 @@
 
 </header>
 
-<section id="onboard">
-
-	<h2>Why is it so hard?</h2>
+<section id="onboard" data-number="1">
 
 	<p>ProQuest's Summon 2.0 has a spot for LibChat settings in its Administration Screen, but it doesn't work. If you want to get your LibChat into Summon 2.0, you'll have to do it through Summon's custom JavaScript feature.</p>
 
@@ -32,18 +34,20 @@
 		<li>10 minutes.</li>
 	</ol>
 
-	<p class="next">Ready? <a href="#">Let's Get Started.</a></p>
+	<p class="next">Ready? <a href="#step1">Let's Get Started.</a></p>
 
 </section>
 
-<section id="step1">
-
 	<h2>Step 1: Get your LibChat "Hash"</h2>
+
+
+<section id="step1" data-number="2">
+
 
 	<p>LibChat works by dynamically loading a chat "widget" from the Springshare servers into Summon. It knows which widget to load by giving each widget it's own "hash," which is a long string of random-looking characters. We'll need the hash for your widget so that we can load it in Summon.</p>
 
 	<ol id="step1_list">
-		<li>Log in to LibAnswers</li>
+		<li>Log in to your library's LibAnswers site</li>
 		<li>Click on 'LibChat' in the Orange header, then select 'Chat Widgets'<br />
 			<img src="img/libchat1.png" alt="Navigate to LibChat > Chat Widgets" />
 		</li>
@@ -51,7 +55,7 @@
 			<img src="img/libchat2.png" alt="View the Widget Code" />
 		</li>
 		<li>Select the code from this box by clicking on the text and pressing Ctrl-C<br />
-			<img src="img/libchat3.gif" alt="Copy the widget code" />
+			<img src="img/libchat3.png" alt="Copy the widget code" />
 		</li>
 		<li>Now paste the code into the box below.<br />
 		<form id="libchat_magic">
@@ -61,19 +65,21 @@
 		</li>
 	</ol>
 
-	<p class="next">Nice work! <a href="#">On to the next step.</a></p>
+	<p class="next" id="startstep2">Nice work! <a href="#step2">On to the next step.</a></p>
 		
 </section>
 
-<section id="step2">
-
 	<h2>Step 2: Test and save your new JavaScript file</h2>
+
+
+<section id="step2" data-number="3">
+
 
 	<p>I've generated the JavaScript file you need to load into Summon, but first, I'd like you to test it.</p>
 
 	<ol>
 		<li>First, click in the box below and copy all the code by pressing Ctrl-C.<br />
-			<textarea id="libchat_code_text"></textarea>
+			<textarea id="libchat_code_text" class="copybox"></textarea>
 		</li>
 		<li>Now open up a new window or tab in your browser and go to your library's Summon site. Do a search so that you have a sceen with some results, like this:<br />
 			<img src="img/summonresults.png" alt="Summon results screen" /></li>
@@ -87,48 +93,73 @@
 		</li>
 		<li>You should see a chevron in the console with a cursor next to it. I want you to click next to that chevron and then paste the code you copied earlier. You can press Ctrl-V for that. Once you've pasted the code, hit enter.</li>
 		<li>Now move the Developer Tools window so you can see your Summon site. Do you have a chat button in the upper right hand corner, like this:<br />
-			<img src="img/summonchat.ong" alt="You should have a chat button here" /><br />
-			<ul class="yesno">
-				<li><a href="#" class="yes">Yes, I have a chat button!</a></li>
-				<li><a href="#" class="no">Nope. It didn't work!</a></li>
+			<img src="img/summonchat.png" alt="You should have a chat button here" /><br />
+			<ul class="yesno" id="testcheck">
+				<li><a href="#testworked" class="yes">Yes, I have a chat button!</a></li>
+				<li><a href="#testfailed" class="no">Nope. It didn't work!</a></li>
 			</ul>
 		</li>
 
-</section>
+		<div id="testworked">
 
-<section id="step3">
+		<h3>Yesss!</h3>
+
+		<p>Now we need to save the JavaScript file on your desktop. Go ahead and click the download button below.</p>
+
+		<p class="download"><a href="#">Download the LibChat2Summon script</a></p>
+
+		<p class="next">Got it! <a href="#step3">Take me to the next step</a></p>
+
+		</div>
+
+		<div id="testfailed">
+
+		<h3>Oh no!</h3>
+
+		<p>Take a look at the Developer Tools console, where you pasted the code. Did you get any red messages? They'll help determine what the problem is. For now, copy that message and email it to <a href="mailto:reidsmam@gvsu.edu">reidsmam@gvsu.edu</a> and I'll try to help you work out what went wrong!</p>
+
+		</div>
+
+</section>
 
 	<h2>Step 3: Upload your file to a server</h2>
 
-	<p>Summon needs to be able to load the JavaScript file we just created, so we need to get it somewhere on the internet. You can probably use your library's Content Management System (like Wordpress or Drupal) to host that. If you don't have access to that, then you can use Dropbox to host your script.</p>
 
-	<p>If you need more help, click on the system name below to learn how to upload your script.</p>
+<section id="step3" data-number="4">
 
-	<ul class="cms">
-		<li class="wordpress">Wordpress</li>
-		<li class="drupal">Drupal</li>
-		<li class="dropbox">Dropbox</li>
-	</ul>
 
-	<form>
+	<p>Summon needs to be able to load the JavaScript file we just created, so we need to get it somewhere on the internet. You can probably use your library's Content Management System (like Wordpress or Drupal) to host that. If you don't have access to a place to host the file, then you can use Dropbox to host your script.</p>
+
+	<h4>To use Dropbox:</h4>
+
+	<ol>
+		<li>Save the libchat2summon.js file you just downloaded into your Dropbox "Public" folder. Wait for the file to sync.</li>
+		<li>Right-click (Ctrl-click on Mac) on the file, and select "Copy Public Link."</li>
+		<li>Paste that link into the box below.</li>
+	</ol>
+
+	<form style="margin-top: 1.5em;">
 	<label for="scripturl">Paste the URL (Ctrl-V) for your script in the box below:</label>
 	<textarea name="scripturl" id="scripturl"></textarea>
 	</form>
 
-	<p class="next">Okay! I've uploaded my script! <a href="#">Show me the next step</a>.</p>
+	<p class="next">Okay! I've uploaded my script! <a href="#step4">Show me the next step</a>.</p>
 	
 
 </section>
 
-<section id="step4">
-
 	<h2>Step 4: Customize Summon 2.0 to load your new JavaScript file</h2>
+
+
+<section id="step4" data-number="5">
+
 
 	<p>Now we're going to tell Summon where to find your script.</p>
 
 	<ol>
 		<li>Log in to the <a href="https://clientcenter.serialssolutions.com" target="_blank">Serials Solutions Client Center</a>.</li>
-		<li>Click on the Summon Administration Console.</li>
+		<li>Click on the Summon Administration Console.<br />
+		<img src="img/clientcenter.png" alt="The second-to-last setting is for the script" /></li>
 		<li>Scroll <i>all the way to the bottom</i> of the Adminstration Console. The second-to-last box is called "<b>Summon 2.0 External Script</b>".<br />
 		<img src="img/summonsettings.png" alt="The second-to-last setting is for the script" />
 		</li>
@@ -142,16 +173,30 @@
 
 </section>
 
-<section id="step5">
-
 	<h2>Step 5: Test and Celebrate!</h2>
+
+
+<section id="step5" data-number="6">
+
 
 		<p>Now let's go back to your library's Summon site and do a new search. You should see your new chat box in the upper right hand corner!</p>
 		<p>Did it work?</p>
-		<ul class="yesno">
-				<li><a href="#" class="yes">Yes, It works!/a></li>
-				<li><a href="#" class="no">Nope. It didn't work!</a></li>
+		<ul class="yesno" id="finalcheck">
+				<li><a href="#worked" class="yes">Yes, It works!</a></li>
+				<li><a href="#failed" class="no">Nope. It didn't work!</a></li>
 			</ul>
+
+		<div id="worked">
+			<h3>Congratulations!</h3>
+
+			<p><img src="img/yes.gif" alt="Celebrate!" /></p>
+		</div>
+
+		<div id="failed">
+			<h3>Uh-oh. Something went wrong.</h3>
+
+			<p>The easiest thing to do right now is email <a href="mailto:reidsmam@gvsu.edu">reidsmam@gvsu.edu</a> and tell me what happened. I'll take a look and see if we can get it working!</p>
+		</div>
 
 </section>
 

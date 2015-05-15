@@ -1,0 +1,183 @@
+/* Styles for the LibChat to Summon tool */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+	width: 100%;
+	color: #333;
+	background-color: #fff;
+}
+
+body {
+	margin: 0 auto;
+	max-width:45em;
+	padding: 0 2%;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 1.25em;
+	background-color: #ddd;
+	color: #575757;
+	padding: .5em 1.5%;
+	border: 1px solid #bbb;
+}
+
+h3 {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+h4 {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+section {
+	padding: 2em 0;
+}
+
+p {
+	line-height: 1.5em;
+	margin: .75em 0;
+}
+
+section ol {
+	list-style: decimal;
+	padding-left: 1.5em;
+	line-height: 1.5em;
+}
+
+.next {
+	margin-top: 1.5em;
+	text-align: right;
+}
+
+.next a,
+ul.yesno li a {
+	display: inline-block;
+	background: #ddd;
+	color: #333;
+	padding: .75em 2em;
+	text-decoration: none;
+	border: 1px solid #dcdcdc;
+	transition: background-color 0.5s ease;
+}
+
+.next a:hover,
+ul.yesno li a:hover {
+	background-color: #444;
+	color: #fff;
+}
+
+img { 
+	max-width: 100%;
+}
+
+b {
+	font-weight: bold;
+}
+
+ol li img {
+	display: block;
+	margin: .75em 0;
+}
+
+textarea {
+	border: 1px solid #bbb;
+	width: 98%;
+	padding: .5em 1%;
+	height: 5em;
+}
+
+ul.yesno li {
+	margin-right: 1em;
+	display: inline;
+}
+
+section div {
+	margin: 1.5em 0;
+}
+
+.download a {
+	display: inline-block;
+	background: #069;
+	color: #fff;
+	padding: .75em 2em;
+	text-decoration: none;
+	border: 1px solid #dcdcdc;
+	transition: background-color 0.5s ease;
+}
+
+.download:hover a {
+	background-color: #0065A4;
+}
+
+ul.cms li {
+	display: block;
+	width: 98%;
+	padding: .5em 1%;
+	background-color: #ddd;
+	border: 1px solid #bbb;
+}
+
+ul.cms {
+	margin-bottom: 2em;
+}
+
+footer {
+	margin-top: 2em;
+	border-top: 1px solid #bbb;
+	padding-top: 1em;
+	font-size: .85em;
+}
