@@ -80,7 +80,8 @@ $('#step3').find('.next').find('a').click(function() {
 // Select all text when textboxes are focused on
 $("textarea.copybox").focus(function() { $(this).select(); } );
 
-$('.download').find('a').click(function() {
+$('.download').find('a').click(function(e) {
+	e.preventDefault();
 	download('libchat2summon.js', scriptCode);
 });
 
